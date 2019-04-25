@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>yinyang</title>
+  <style>
+   body{ background-color: rgb(228,228,230); height:100vh; display: flex; justify-content: center; align-items: center; }
+   .yinyang{ background-color: #fff; width: 200px; height: 100px; border-bottom: 100px solid black; border-radius:100%; position: relative; animation: spin 1.8s  linear infinite;}
+   .yinyang:before{ display: block; content:""; width: 20px; height:20px; background-color: white; border-radius:100%; border: 40px solid black; position:absolute; top:50px; }
+   .yinyang:after{ display: block; content:""; width: 20px; height:20px; background-color: black; border-radius:100%; border: 40px solid white; position: absolute; top:50px; left:100px;}
+
+  @keyframes spin{
+    from {
+      transform:rotate(0deg)
+    }
+    to{
+      transform:rotate(360deg)
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="yinyang"></div>
+</body>
+</html>
