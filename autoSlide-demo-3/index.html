@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="//at.alicdn.com/t/font_669439_mwpd7pzvjzwipb9.js"></script>
+    <title>一个轮播demo</title>
+</head>
+<body>
+    <div class="introduction">
+        <h1>A Slide Demo</h1>
+        <h2>author:lyn(饥人谷学员)</h2> 
+    </div>
+    <div id= "wrapper" class="wrapper" >
+      
+        <div id="window" class="window">
+            <div  id = "slideWrapper" class="slides">
+                <img src="./1.png" alt="第1张">
+                <img src="./2.png" alt="第2张">
+                <img src="./3.png" alt="第3张">
+                <img src="./4.png" alt="第4张">
+                <img src="./5.png" alt="第5张">
+            </div>
+        </div>
+        <div id="preOrNextButton">
+            <svg id ="previous" class="icon previous" >
+                <use xlink:href="#icon-zuo"></use>
+            </svg>
+            <svg id ="next" class="icon next" >
+                    <use xlink:href="#icon-you"></use>
+            </svg>
+        </div>
+
+        <div id="buttonWrapper" class="buttons">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
