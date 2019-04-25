@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>一个轮播demo</title>
+  <style>
+    *{margin:0;padding:0;}
+    .window{width:475px;overflow:hidden;border-radius:8px;margin:40px auto 10px;}
+    .window .images {display:flex; transition:transform 0.5s;}
+    .window .images >img{width:475px;height:260px;}
+    #buttons{display:flex;justify-content:center;}
+    #buttons > span{background-color: #ddd;padding:6px;margin:4px;border-radius:10px;font-size:12px;cursor: pointer;}
+    #buttons .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div class="images"id="images">
+      <img src="https://ws1.sinaimg.cn/large/b6d6c7e1gy1fr3v25ofv1j20d7078q9t.jpg" alt="">
+      <img src="https://ws1.sinaimg.cn/large/b6d6c7e1gy1fr3v2b531tj20d7078ag6.jpg" alt="">
+      <img src="https://ws1.sinaimg.cn/large/b6d6c7e1gy1fr3v2cb6vzj20d7078wkl.jpg" alt="">
+      <img src="https://ws1.sinaimg.cn/large/b6d6c7e1gy1fr3v2avhh7j20d70787b9.jpg" alt="">
+    </div>
+  </div>
+  <div id="buttons">
+<span id="position1">第1张</span>
+<span id="position2">第2张</span>
+<span id="position3">第3张</span>
+<span id="position4">第4张</span>
+  </div>
+  <script>
+    var allButtons = $('#buttons > span')
+    
+    var n=0
+    var picNum = allButtons.length
+    var timeId
+    activeButton(allButtons.eq(n))  
+    //实现点击对应button可轮播到对应pic
+    for(let i=0;i<allButtons.length;i++){//遍历buttons，自动获取移动位置
+      allButtons.eq(i).on('click',function(x){
+        var index=$(x.currentTarget).index()
+       
+        var position = index* -475
+        $('#images').css({
+        transform:'translate('+position+'px)'
+        })
+        n=index
+        activeButton(allButtons.eq(n))  
+        console.log(n)        
+      })
+    } 
+    setAutoSlide()
+
+
+
+    //自动轮播
+    function setAutoSlide(){
+      timeId = window.setInterval(()=>{
+        n += 1
+        // console.log(n)
+        allButtons.eq(n % picNum).trigger('click')
+        }, 3000)
+    }
+    function stopSlide(){
+      window.clearInterval(timeId)
+    }  
+    //图片轮播时高亮对应button
+    function activeButton($button){
+      $button.addClass('active')
+      .siblings('.active').removeClass('active')
+    }
+
+    // 鼠标hover时停止轮播,leave时继续轮播
+    $('.window').on('mouseenter',function(){
+    stopSlide()
+    })
+    $('.window').on('mouseleave',function(){
+      setAutoSlide()
+    })
+  </script>
+</body>
+</html>
