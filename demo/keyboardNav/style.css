@@ -1,0 +1,86 @@
+*{	margin: 0;	padding: 0;cursor: default;}
+
+/*背景图设置*/
+body{
+	background-image: url(./img/background.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: rgb(224,224,224);}
+
+body main{	
+	height: 100vh;	
+	display: flex;	
+	justify-content: center;	
+	align-items: center; 	
+	background-color: rgba(0, 0, 0, 0.5);}
+
+.wrapper{
+	padding: 32px;
+	border-radius: 18px;
+	background-color: rgba(225, 225, 225, 0.2);}
+
+.wrapper .keyRow{
+	display: flex;
+	justify-content: center;
+	align-items: center; }
+
+	/*键样式*/
+.wrapper >.keyRow > kbd{
+	height: 70px;
+	width: 70px;
+  	display: flex;
+  	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-right: 12px;
+	margin-bottom: 12px;
+	border-radius: 8px;
+	background-color: rgb(0, 0, 0);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5)}
+
+.wrapper kbd:hover{	box-shadow: none;}
+
+.keyRow kbd:last-child{	margin-right: 0;}
+
+.wrapper .keyRow:last-child > kbd{	margin-bottom: 0;}
+
+/*键盘字体样式*/
+.wrapper .keyword{
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 69px;
+	font-size: 24px;
+	font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
+	color: rgb(224,224,224)}
+
+/* button编辑*/
+.wrapper .edit{
+	cursor: pointer;
+	position: absolute;
+	display: none;
+	top: 2px;
+	right: 2px;
+	height: 20px;
+	width: 24px;
+	border: 1px solid rgba(213, 223, 232, 0.4);
+	border-radius: 4px;
+	background-color:rgba(36, 77, 87, 0.4);
+	color: rgb(213, 223, 232)}
+
+.wrapper kbd:hover > .edit{	display: inline-block;}
+
+/* icon设置*/
+.wrapper > .keyRow > kbd > img{
+	position: absolute;
+	bottom:  2px;
+	left: 2px;
+	height: 16px;
+	width: 16px;
+	border-radius: 30%;
+	background-color:rgba(213, 223, 232,0.5);
+	padding: 1px;
+}
+header{
+	position: relative;
+}
