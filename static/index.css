@@ -1,0 +1,292 @@
+/* reset*/
+*{margin:0;padding:0;box-sizing: border-box;}
+*{font-family: 'Open Sans', sans-serif;}
+ul,li,ol{list-style: none;}
+a{text-decoration: none;color: #008CBA;}
+a:active{color: inherit;}
+
+/*布局*/
+html{font-size: 16px;}
+header,main{
+  min-width:320px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+h3{
+  font-size: 1rem;
+  font-weight: 300 ;
+}
+.row{
+  display: flex;
+}
+.row .columns{
+  flex:1;
+}
+p,.skillName,.black{
+  color:#58585A;
+  font-weight: 300;
+}
+p.strong{
+  font-weight: 500!important;
+}
+.grey{
+  color: #D1D2D4;
+}
+/*基本信息*/
+.baseInfo{
+  color: #BDBEC0;
+}
+.baseInfo .name{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex:0;
+}
+.baseInfo .name h2{
+  font-weight: 300;
+  color: #222222;
+  font-size: 2.5rem;
+  margin-bottom: .1em;
+  width: 4em;
+  text-align: center;
+}
+.baseInfo .name span{
+  color: #58585A;
+}
+.baseInfo .baseItem{
+  display: flex;
+}
+.baseInfo .baseItem .title {
+  margin:1rem 1rem 0;
+}
+.baseInfo .baseItem .content{
+  border-left: 1px solid ;
+  flex:1;
+  padding:0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+.baseInfo .baseItem .content li{
+  margin-bottom: .2em;
+}
+
+/*其他信息*/
+main{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main .mainContent{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding:1rem;
+}
+main section{
+  width: 100%;
+  flex-shrink:0 ;
+  flex-direction: column;
+}
+main section h2{
+  border-bottom: 2px dotted;
+  display: block;
+  width: 100%;
+  color: #232323;
+  font-weight: 400;
+  padding: 1.5em .5em 1em;
+}
+main section .info{
+  margin: 1.5em 0 0;
+}
+
+/* 个人简介 */
+.profile .info p{
+  font-weight: 300;
+  margin-bottom: .5em;
+}
+
+/* 技能专长 */
+.skill .info .skillItem{
+  display: flex;
+}
+.skill .info .skillItem .skillName{
+  width: 40%;
+  flex-shrink: 0;
+  min-width: 9.375rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+
+}
+.skill .info .skillItem .circle{
+  display: flex;
+  flex:1;
+  justify-content: space-around;
+  align-items: center;
+}
+.skill .info .skillItem .circle i{
+  font-size: 1.25rem;
+}
+
+/* 工作经验 */
+.workExperience .info{
+  border-left: 0.25rem solid;
+}
+.workExperience .info .company{
+  position: relative;
+  padding-left: 1rem;
+}
+.workExperience .info .company::before {
+  content: '';
+  display: block;
+  background: #222222;
+  color: #222222;
+  border:0.25rem solid #fff;
+  height: .65rem;
+  width: .65rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -.7rem;
+  top: 50%;
+  transform: translateY(-.4rem);
+}
+.workExperience .info .company .companySummary {
+  font-weight: 300;
+  color: #1f1f1f;
+  line-height: 1.8;
+  font-size: .875rem;
+}
+.workExperience .info .company .job {
+  font-weight: 300;
+  color: #222222;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  margin: .5rem 0 .2rem .5rem;
+  font-size: .875rem;
+}
+.workExperience .info .company .job i{
+  font-size: 1rem;
+}
+.workExperience .info .company h3 {
+  color: #6D6E71;
+  font-size: 1rem;
+  font-weight: 300 ;
+}
+.workExperience .info .company .desc li{
+  list-style: circle outside;
+  margin: .5rem 0 0 1rem;
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+/*开源项目*/
+.personalProject{
+  padding: .5rem;
+}
+.personalProject .github{
+  width: 100%;
+}
+.personalProject .projects{
+}
+.personalProject .projects .projectItem{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.personalProject .projects .projectItem:not(:last-child){
+  border-bottom: 1px solid #BDBEC0;
+
+}
+.personalProject .projects .projectItem .projectInfo{
+  display: flex;
+}
+.personalProject .projects .projectItem .preview{
+  margin-left: .5rem;
+  width: 40%;
+  max-width: 180px;
+  min-width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.personalProject .projects .projectItem .preview img{
+  width:100%;
+}
+.personalProject .projects .projectItem .text .desc {
+  margin: 1rem 0;
+}
+.personalProject .projects .projectItem .text .desc li {
+  list-style: circle outside;
+  margin-bottom: .5em;
+}
+.personalProject .projects .projectItem .text .desc li span{
+  min-width: 5em;
+}
+.personalProject .projects .projectItem .text .desc li p {
+  display: inline;
+}
+
+.button{
+  float: right;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  padding:.5em 1.2em;
+  cursor: pointer;
+  outline:none;
+  display: inline-flex;
+  align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  vertical-align: middle;
+  border-color: #4B88AC;
+  border-style:solid;
+  background: #fff;
+  color: #4B88AC;
+}
+.button:active,.button:focus,.button:hover {
+  background: rgba(75,136,172,.15);
+}
+@media print and (max-width:960px) {
+  .row{
+    flex-direction: column;
+  }
+  .baseInfo .name{
+    align-items:flex-start ;
+    margin: 1em;
+
+  }
+  .baseInfo .name h2{
+    width: 3em;
+  }
+
+  .baseInfo .baseItem .title{
+    margin: 0 1rem;
+    flex:1
+  }
+  .baseInfo .baseItem .content {
+    flex: 2;
+  }
+  main .mainContent{
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media print{
+  html{
+    font-size: 14px;
+  }
+  .button,.github{
+    display: none;
+  }
+  header.baseInfo{
+    flex-direction: row;
+  }
+  #skill-wrapper{
+    margin-top: 80px;
+  }
+  }
