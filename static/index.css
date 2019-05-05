@@ -191,8 +191,6 @@ main section .info{
 .personalProject .github{
   width: 100%;
 }
-.personalProject .projects{
-}
 .personalProject .projects .projectItem{
   display: flex;
   flex-direction: column;
@@ -251,7 +249,7 @@ main section .info{
 .button:active,.button:focus,.button:hover {
   background: rgba(75,136,172,.15);
 }
-@media print and (max-width:960px) {
+@media (max-width:960px) {
   .row{
     flex-direction: column;
   }
